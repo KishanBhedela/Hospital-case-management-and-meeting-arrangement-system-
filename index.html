@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hospital Case & Meeting Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🏥 Hospital Case & Meeting Manager</h1>
+    <nav>
+      <button onclick="showSection('dashboard')">Dashboard</button>
+      <button onclick="showSection('patients')">Patients</button>
+      <button onclick="showSection('doctors')">Doctors</button>
+      <button onclick="showSection('appointments')">Appointments</button>
+      <button onclick="showSection('meetings')">Meetings</button>
+      <button onclick="showSection('emergency')">Emergency</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Dashboard -->
+    <section id="dashboard" class="active">
+      <h2>Dashboard</h2>
+      <div class="stats">
+        <div>Total Patients: <span id="statPatients">0</span></div>
+        <div>Total Doctors: <span id="statDoctors">0</span></div>
+        <div>Total Appointments: <span id="statAppointments">0</span></div>
+        <div>Total Meetings: <span id="statMeetings">0</span></div>
+      </div>
+    </section>
+
+    <!-- Patients -->
+    <section id="patients">
+      <h2>Patients</h2>
+      <form onsubmit="addPatient(event)">
+        <input type="text" id="patientName" placeholder="Patient Name" required>
+        <input type="number" id="patientAge" placeholder="Age" required>
+        <input type="text" id="patientDisease" placeholder="Disease" required>
+        <button type="submit">Add Patient</button>
+      </form>
+      <ul id="patientList"></ul>
+    </section>
+
+    <!-- Doctors -->
+    <section id="doctors">
+      <h2>Doctors</h2>
+      <form onsubmit="addDoctor(event)">
+        <input type="text" id="doctorName" placeholder="Doctor Name" required>
+        <input type="text" id="doctorSpecialty" placeholder="Specialty" required>
+        <button type="submit">Add Doctor</button>
+      </form>
+      <ul id="doctorList"></ul>
+    </section>
+
+    <!-- Appointments -->
+    <section id="appointments">
+      <h2>Appointments</h2>
+      <form onsubmit="addAppointment(event)">
+        <select id="appointmentPatient" required></select>
+        <select id="appointmentDoctor" required></select>
+        <input type="date" id="appointmentDate" required>
+        <button type="submit">Schedule</button>
+      </form>
+      <ul id="appointmentList"></ul>
+    </section>
+
+    <!-- Meetings -->
+    <section id="meetings">
+      <h2>Meetings</h2>
+      <form onsubmit="addMeeting(event)">
+        <input type="text" id="meetingTitle" placeholder="Meeting Title" required>
+        <input type="datetime-local" id="meetingDate" required>
+        <button type="submit">Create Meeting</button>
+      </form>
+      <ul id="meetingList"></ul>
+    </section>
+
+    <!-- Emergency -->
+    <section id="emergency">
+      <h2>🚨 Emergency Cases</h2>
+      <button onclick="triggerEmergency()">Trigger Emergency Alert</button>
+      <ul id="emergencyList"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

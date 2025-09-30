@@ -1,0 +1,67 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f6f9;
+  color: #333;
+}
+
+header {
+  background: #0066cc;
+  color: white;
+  padding: 1em;
+  text-align: center;
+}
+
+nav button {
+  margin: 0.3em;
+  padding: 0.5em 1em;
+  border: none;
+  background: #005bb5;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+nav button:hover {
+  background: #004080;
+}
+
+main {
+  padding: 1em;
+}
+
+section {
+  display: none;
+  background: white;
+  padding: 1em;
+  border-radius: 8px;
+  margin-top: 1em;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+section.active {
+  display: block;
+}
+
+form input, form select, form button {
+  margin: 0.5em 0;
+  padding: 0.5em;
+  width: calc(100% - 1em);
+}
+
+form button {
+  background: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  background: #f0f0f0;
+  padding: 0.5em;
+  margin: 0.5em 0;
+  border-radius: 5px;
+}
